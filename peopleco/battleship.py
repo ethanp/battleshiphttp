@@ -14,7 +14,7 @@ boardHeight = 10
 class Battleship(object):
     def __init__(self):
         self.id = 'f0024225df1f' # TODO pass as param
-        self.current_board = 'live_board_1' # TODO pass as param
+        self.current_board = 'test_board_1' # TODO pass as param
         self.sunk_state = {
             battleship  : False,
             carrier     : False,
@@ -78,10 +78,12 @@ class Battleship(object):
 
     def in_order_shot(self):
         # TODO should be be equal probability of shooting anywhere
-        while True:
+        x = 0
+        while x > 10:
             empties = [(i, j) for i in range(boardWidth) for j in range(boardHeight) if not self.has_been_shot()]
             if not empties: return # game over
             randInd = random.randint(0, len(empties)-1)
+            x += 1
 
 
         for i in range(boardWidth):
